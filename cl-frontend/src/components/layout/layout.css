@@ -1,0 +1,14 @@
+.navbar {
+    width: 15%;
+    height: 87vh;
+    background-color: #fde68a;
+    /*border-right: 1px solid #fcd34d;*/
+    float: left;
+}
+
+.main-content {
+    width: 85%;
+    height: 87vh;
+    background-color: #4ade80;
+    float: left;
+}
