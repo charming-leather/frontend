@@ -1,0 +1,391 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #fcd385;
+  font-family: 'Open Sans', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+.container {
+  background-color: #fcd385;
+  border-radius: 1.5rem;
+  width: 100%;
+  max-width: 1200px;
+  aspect-ratio: 16 / 9;
+  box-shadow: 0 4px 10px rgb(0 0 0 / 0.1);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2.5rem;
+  border-bottom: 1px solid #f7c97a;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo-text {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 1.125rem;
+  color: #d46a00;
+  user-select: none;
+}
+
+.logo-text span {
+  font-weight: 400;
+  color: #6b4a00;
+}
+
+nav {
+  display: flex;
+  gap: 4rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: #4a1f00;
+  user-select: none;
+}
+
+nav a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 9999px;
+  padding: 0.25rem 1rem;
+  max-width: 180px;
+  width: 100%;
+}
+
+form input {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 0.875rem;
+  color: black;
+  flex-grow: 1;
+  font-family: inherit;
+}
+
+form input::placeholder {
+  color: black;
+}
+
+form button {
+  background: none;
+  border: none;
+  padding-left: 0.5rem;
+  cursor: pointer;
+  color: black;
+  font-size: 1rem;
+}
+
+.content {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+aside {
+  background-color: #f9c66a;
+  width: 14rem;
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  color: #4a1f00;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 1.125rem;
+  user-select: none;
+}
+
+aside a {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0 0.375rem 0.375rem 0;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+aside a svg {
+  font-size: 1.125rem;
+}
+
+aside a.active {
+  background-color: #f28c00;
+  box-shadow: 2px 0 5px rgb(0 0 0 / 0.15);
+}
+
+aside a:not(.active):hover {
+  background-color: #f7c97a;
+}
+
+main {
+  background-color: white;
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+main h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  color: #4a1f00;
+  font-size: 1.25rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  line-height: 1.3;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  max-width: 64rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2.5rem;
+}
+
+@media (min-width: 640px) {
+  .stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.card {
+  background-color: white;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.card h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.125rem;
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 2.25rem;
+  margin: 0;
+}
+
+/* Active toggle */
+.toggle {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 3rem;
+  height: 1.5rem;
+  background-color: #4ade80;
+  border-radius: 9999px;
+  padding: 0.125rem;
+  display: flex;
+  align-items: center;
+  cursor: default;
+}
+
+.toggle-circle {
+  background-color: white;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 9999px;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 0.2);
+  transform: translateX(1.5rem);
+}
+
+/* Completed check circle */
+.completed-icon {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 1.75rem;
+  height: 1.75rem;
+  background-color: #f7c97a;
+  border-radius: 9999px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 1.125rem;
+}
+
+/* Overdue clock */
+.overdue-icon {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 9999px;
+  border: 1.5px solid #dc2626;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #dc2626;
+  font-size: 1.125rem;
+  position: relative;
+}
+
+.overdue-icon .ping-dot {
+  position: absolute;
+  bottom: 0.25rem;
+  left: 0.25rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: #dc2626;
+  border-radius: 9999px;
+  animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes ping {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  75%,
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+/* Total collected icon */
+.total-icon {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  color: #d46a00;
+  width: 1.5rem;
+  height: 1.5rem;
+  pointer-events: none;
+}
+
+/* Tables */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.875rem;
+}
+
+thead tr {
+  background-color: #f9c66a;
+  color: #4a1f00;
+  font-weight: 600;
+}
+
+th,
+td {
+  border: 1px solid #9ca3af;
+  padding: 0.25rem 0.5rem;
+  text-align: left;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #fff;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #fefefe;
+}
+
+.upcoming-payments-section {
+  max-width: 64rem;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .upcoming-payments-section {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.btn-add-layby {
+  background-color: #4a1f00;
+  color: #f7c97a;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  border-radius: 9999px;
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  border: none;
+  user-select: none;
+  font-size: 1rem;
+  white-space: nowrap;
+}
+
+.btn-add-layby span.plus {
+  font-size: 1.875rem;
+  line-height: 1;
+}
+
+.due-date-button {
+  background-color: #d1d5db;
+  border-radius: 0.375rem;
+  padding: 0.125rem 0.5rem;
+  font-weight: 600;
+  font-size: 0.75rem;
+  border: none;
+  cursor: default;
+  font-family: inherit;
+}
+
+/* Signature bottom right */
+.signature {
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  color: #4a1f00;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  user-select: none;
+}
